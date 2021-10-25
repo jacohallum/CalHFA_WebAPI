@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.11
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalHFA_WebAPI", "CalHFA_WebAPI\CalHFA_WebAPI.csproj", "{704BE5F4-F9D4-4E05-9824-3FC77C996D95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{704BE5F4-F9D4-4E05-9824-3FC77C996D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704BE5F4-F9D4-4E05-9824-3FC77C996D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704BE5F4-F9D4-4E05-9824-3FC77C996D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704BE5F4-F9D4-4E05-9824-3FC77C996D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E40533C5-81E6-4A17-B3F9-6092CD60D6D9}
+	EndGlobalSection
+EndGlobal
