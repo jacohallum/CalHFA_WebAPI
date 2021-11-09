@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
@@ -15,8 +19,8 @@ namespace Core
         private static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
         private const string SpreadsheetId = "1poZ4SmavATZKrG17Gc30VUfYhtfsbIfqS8CehfytbhM";
         private const string GoogleCredentialsFileName = "google-credentials.json";
-        private const string ReadRange = "A:B:C";
-        private const string WriteRange = "A5:B5:C5";
+        private const string ReadRange = "A:Q";
+        private const string WriteRange = "A:Q";
 
         static async Task Main(string[] args)
         {
@@ -51,7 +55,7 @@ namespace Core
             }
 
             var header = string.Join(" ", values.First().Select(r => r.ToString()));
-            Console.WriteLine($"Header: {header}");
+            Console.WriteLine($"Header:{header}");
 
             foreach (var row in values.Skip(1))
             {
@@ -62,11 +66,14 @@ namespace Core
 
         private static async Task WriteAsync(SpreadsheetsResource.ValuesResource valuesResource)
         {
-            var valueRange = new ValueRange { Values = new List<IList<object>> { new List<object> { "stan", 18 } } };
-            var update = valuesResource.Update(valueRange, SpreadsheetId, WriteRange);
-            update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
-            var response = await update.ExecuteAsync();
-            Console.WriteLine($"Updated rows: {response.UpdatedRows}");
+            
+            //var valueRange = new ValueRange { Values = new List<IList<object>> { new List<object> { "crazy", 99 } } };
+            //var update = valuesResource.Update(valueRange, SpreadsheetId, WriteRange);
+            //update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
+            //var response = await update.ExecuteAsync();
+            //Console.WriteLine($"Updated rows: {response.UpdatedRows}");
         }
+        
     }
+    
 }
